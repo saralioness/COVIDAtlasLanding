@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>COVID Atlas</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="/assets/images/favicon/favicon.ico">
+		<link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="/assets/images/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+		<meta name="msapplication-TileImage" content="/assets/images/favicon/ms-icon-144x144.png">
+		<style>
+
+			@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,500");
+			@import url("https://fonts.googleapis.com/css?family=Merriweather:400,500");
+			
+			html {
+				-webkit-text-size-adjust: 100%;
+					-ms-text-size-adjust: 100%;
+			}
+			
+			body {
+				font: 15px/1.5 "Merriweather", Georgia, serif;
+				color: #ffffff;
+				background-color: #1e0a46;
+				margin: 0;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			
+			
+			a {
+				color: #2d8ce0;
+				position: relative;
+				text-decoration: none;
+			}
+			
+			a:hover, a:focus {
+				color: #ffffff;
+			}
+			
+			::-moz-focus-inner {
+				padding: 0;
+				border: 0;
+			}
+			
+			:focus {
+				outline: 0;
+			}
+			
+			#container {
+				width: 95%;
+				min-width: 300px;
+				padding-right: 10px;
+			}
+			
+			.main-text {
+				font: 900 20px/1 "Open Sans", Helvetica, sans-serif;
+				font-weight: bold;
+				text-transform: uppercase;
+			    letter-spacing: 2px;
+			}
+			
+			.main-text-small {
+				font-size: 15px;
+			}
+			
+			.logo {
+				background: url('/assets/images/logo.png') no-repeat;
+				background-position: top left, top left;
+				background-repeat: no-repeat;
+				background-size: auto, auto 100%;
+				width: 167px;
+				height: 200px;
+				padding: 0;
+				margin: 0;
+			}
+			
+
+			@media
+				only screen and (-webkit-min-device-pixel-ratio: 1.25),
+				only screen and ( min--moz-device-pixel-ratio: 1.25),
+				only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+				only screen and ( min-device-pixel-ratio: 1.25),
+				only screen and ( min-resolution: 200dpi),
+				only screen and ( min-resolution: 1.25dppx)
+				{
+					.logo {
+						background: url('/assets/images/logo@2x.png') no-repeat;
+						background-size: 167px;
+					}
+			}
+			.section {
+				z-index: 1;
+				position: relative;
+				padding: 46px 0 96px 96px;
+				width: calc(100vw - 96px - 7em);
+				display: -webkit-box;
+				display: flex;
+				box-sizing: border-box;
+				min-height: 75vh;
+			}
+			
+			@media (max-width: 1024px) {
+				.section {
+					padding: 48px 0 48px 48px;
+					width: calc(100vw - 48px - 7em);
+				}
+			}
+			
+			@media (max-width: 950px) {
+				.section {
+					padding: 6.5vw;
+					width: 100%;
+				}
+			}
+			
+			@media (max-width: 600px) {
+				.section {
+					display: block;
+					min-height: 0;
+				}
+			}
+			
+			.column-section {
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				flex-direction: column;
+			}
+			
+			@media (max-width: 600px) {
+				.column-section-main {
+					-webkit-box-orient: vertical;
+					-webkit-box-direction: normal;
+					flex-direction: column;
+				}
+			}
+			
+			.section-intro {
+				-webkit-box-pack: justify;
+				justify-content: space-between;
+			}
+			
+			@media (max-width: 600px) {
+				.col-section {
+					margin-bottom: 15vw;
+				}
+			}
+			
+			.intro {
+				font-size: 20px;
+				font-weight: 100;
+				margin-bottom: -.45em;
+				max-width: 1000px;
+			}
+			
+			@media (max-width: 600px) {
+				.intro {
+					padding-top: 15vw;
+					font-size: 18px;
+				}
+			}
+			
+			.footer {
+				position: relative;
+			    padding-top: 30px;
+				right: 48px;
+				bottom: 48px;
+				display: -webkit-box;
+				display: flex;
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				flex-direction: column;
+				-webkit-box-align: end;
+				align-items: flex-end;
+			}
+			
+			@media (max-width: 1024px) {
+				.footer {
+					right: 48px;
+					bottom: 48px;
+				}
+			}
+			
+			@media (max-width: 600px) {
+				.footer {
+					position: relative;
+					right: auto;
+					bottom: auto;
+					padding: 20px 6.5vw 7.5vw;
+					-webkit-box-align: start;
+					align-items: flex-start;
+				}
+			}
+			
+			.footer-links {
+				margin-top: 1em;
+				line-height: 1;
+			}
+			
+			@media (max-width: 950px) {
+				.footer-links {
+					display: inline;
+				}
+			}
+
+		</style>
+	</head>
+	<body>
+	<div id="container">
+		<section class="section column-section section-intro">
+		<figure class="logo"></figure>
+			<p class="intro">COVID Atlas is an open-source, community-developed project that provides automatic, daily updates of official local and regional 			public health data related to the COVID-19 pandemic.</p> 
+			<p class="intro">Check back for updates, or view <a href="https://github.com/lazd/coronadatascraper/"  target="_blank">sources</a> in the meantime.</p>
+		</section>
+		<footer class="footer main-text main-text-small">
+			<a class="footer-links link-twitter" href="http://twitter.com/covidatlas" target="_blank">twitter</a>
+			<a class="footer-links link-facebook" href="http://facebook.com/covidatlas" target="_blank">facebook</a>
+			<a class="footer-links link-instagram" href="http://instagram.com/covidatlas" target="_blank">instagram</a>
+		</footer>
+	</div>
+	</body>
+</html>
